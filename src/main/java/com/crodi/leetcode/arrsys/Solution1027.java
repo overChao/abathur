@@ -1,4 +1,4 @@
-package com.crodi.leetcode.leetcode.arrsys;
+package com.crodi.leetcode.arrsys;
 
 /**
  * @Package: com.crodi.leetcode.leetcode.arrsys

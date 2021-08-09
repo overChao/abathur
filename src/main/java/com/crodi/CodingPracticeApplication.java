@@ -1,13 +1,13 @@
-package com.crodi.leetcode.leetcode;
+package com.crodi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class LeetCodeApplication {
+public class CodingPracticeApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(LeetCodeApplication.class, args);
+        SpringApplication.run(CodingPracticeApplication.class, args);
     }
 
 }

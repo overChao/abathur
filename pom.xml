@@ -8,10 +8,10 @@
         <version>2.3.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.crodi.leetcode</groupId>
-    <artifactId>leetcode</artifactId>
+    <groupId>com.crodi</groupId>
+    <artifactId>coding-practice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>leetcode</name>
+    <name>coding-practice</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
