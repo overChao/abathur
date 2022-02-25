@@ -1,13 +1,13 @@
-package com.crodi;
+package com.kechao.crodi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CodingPracticeApplication {
+public class CrodiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CodingPracticeApplication.class, args);
+        SpringApplication.run(CrodiApplication.class, args);
     }
 
 }
