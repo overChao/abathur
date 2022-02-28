@@ -1,5 +1,6 @@
 package com.kechao.crodi.aop;
 
+import com.kechao.crodi.common.LocalStorage;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 /**
  * author: zkc
@@ -29,10 +31,14 @@ public class AuthenticationAspect {
 		for (Object arg : joinPoint.getArgs()) {
 			if (arg instanceof HttpServletRequest){
 				HttpServletRequest request = (HttpServletRequest) arg;
+				Map<String, String[]> parameterMap = request.getParameterMap();
 				String token = request.getHeader("token");
-				if (token != null){
+				if (token != null) {
 					// 从 LocalStorage 获取用户信息  LocalStorage 通过 guava cache 实现
-					// TODO: 2022/2/25  补充逻辑
+					Object userInfo = LocalStorage.getUserInfo(token);
+					if (userInfo != null) {
+
+					}
 				}
 				return;
 			}
