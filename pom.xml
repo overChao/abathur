@@ -8,8 +8,8 @@
         <version>2.3.4.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.kechao.crodi</groupId>
-    <artifactId>crodi</artifactId>
+    <groupId>com.crodi</groupId>
+    <artifactId>abathur</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>crodi</name>
     <description>Demo project for Spring Boot</description>
@@ -61,9 +61,16 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.20.Final</version>
         </dependency>
 
     </dependencies>

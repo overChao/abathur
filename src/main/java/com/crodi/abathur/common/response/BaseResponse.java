@@ -1,6 +1,6 @@
-package com.kechao.crodi.common.response;
+package com.crodi.abathur.common.response;
 
-import com.kechao.crodi.common.constant.ResultCode;
+import com.crodi.abathur.common.constant.ResultCode;
 import lombok.Data;
 
 /**

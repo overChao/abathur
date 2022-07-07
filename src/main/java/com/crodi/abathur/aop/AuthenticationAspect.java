@@ -1,6 +1,6 @@
-package com.kechao.crodi.aop;
+package com.crodi.abathur.aop;
 
-import com.kechao.crodi.common.LocalStorage;
+import com.crodi.abathur.common.LocalStorage;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -22,11 +22,11 @@ import java.util.Map;
 @Component
 public class AuthenticationAspect {
 
-	@Pointcut(value = "@annotation(com.kechao.crodi.aop.Authentication)")
+	@Pointcut(value = "@annotation(com.crodi.abathur.aop.Authentication)")
 	public void pointcut(){}
 
 
-	@Before(value = "@annotation(com.kechao.crodi.aop.Authentication)")
+	@Before(value = "@annotation(com.crodi.abathur.aop.Authentication)")
 	public void before(JoinPoint joinPoint){
 		for (Object arg : joinPoint.getArgs()) {
 			if (arg instanceof HttpServletRequest){

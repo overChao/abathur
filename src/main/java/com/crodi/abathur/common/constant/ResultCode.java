@@ -1,4 +1,4 @@
-package com.kechao.crodi.common.constant;
+package com.crodi.abathur.common.constant;
 
 /**
  * author: zkc

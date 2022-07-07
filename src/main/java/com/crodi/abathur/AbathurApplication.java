@@ -1,13 +1,13 @@
-package com.kechao.crodi;
+package com.crodi.abathur;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CrodiApplication {
+public class AbathurApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CrodiApplication.class, args);
+        SpringApplication.run(AbathurApplication.class, args);
     }
 
 }
