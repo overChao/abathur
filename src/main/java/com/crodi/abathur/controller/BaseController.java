@@ -25,9 +25,8 @@ public class BaseController {
 	private Map<String, String> context = new HashMap<>(16);
 
 	@RequestMapping(value = "/auth", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-	private void syncUserAuthentic(@RequestBody BaseQo qo) {
+	public void syncUserAuthentic(@RequestBody BaseQo qo) {
 
 	}
-
 
 }
