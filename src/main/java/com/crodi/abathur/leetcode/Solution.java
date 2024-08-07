@@ -1,16 +1,24 @@
 package com.crodi.abathur.leetcode;
 
+import com.crodi.abathur.entity.TreeNode;
+import com.google.common.collect.Lists;
+import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Objects;
+
 /**
- * @Package: com.crodi.leetcode.leetcode.arrsys
  * @Author: crodi
- * @Description: leet code 1470. Shuffle the Array
+ * @Description:
  * @Date: 2020/10/26 1:57 下午
  * @Version: 1.0
  */
+
+@Component
 public class Solution {
 
 
-    public static int[] shuffle(int[] nums, int n) {
+    public int[] shuffle(int[] nums, int n) {
 
         int[] result = new int[nums.length];
 
@@ -28,7 +36,7 @@ public class Solution {
      * @param indices
      * @return
      */
-    public static String restoreString(String s, int[] indices) {
+    public String restoreString(String s, int[] indices) {
 
         byte[] bytes = new byte[indices.length];
         byte[] sBytes = s.getBytes();
@@ -39,15 +47,21 @@ public class Solution {
     }
 
 
-    public static void main(String[] args) {
+    private final List<Integer> results = Lists.newArrayList();
 
-        int[] nums = new int[]{1, 1, 2, 2};
+    public List<Integer> inorderTraversal(TreeNode treeNode) {
+        if (Objects.nonNull(treeNode)) {
+            if (Objects.nonNull(treeNode.getLeft())){
+                this.inorderTraversal(treeNode.getLeft());
+            }
+            results.add(treeNode.getVal());
 
-        int[] indices = new int[]{4, 5, 6, 7, 0, 2, 1, 3};
-
-        System.out.println(restoreString("codeleet", indices));
-//        System.out.println(Arrays.toString(shuffle(nums, 2)));
-
+            if (Objects.nonNull(treeNode.getRight())) {
+                this.inorderTraversal(treeNode.getRight());
+            }
+        }
+        return results;
     }
+
 
 }

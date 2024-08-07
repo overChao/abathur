@@ -1,7 +1,7 @@
 server:
   port: 8891
   servlet:
-    context-path: abathur
+    context-path: /abathur
 
 spring:
   application:
