@@ -43,4 +43,33 @@ public class SolutionTest {
     }
 
 
+    @Test
+    public void testIsValidBST() {
+
+        final TreeNode childLeftNode = new TreeNode();
+        childLeftNode.setVal(3);
+
+        final TreeNode childRightNode = new TreeNode();
+        childRightNode.setVal(4);
+
+        final TreeNode riftNode = new TreeNode();
+        riftNode.setVal(2);
+//        riftNode.setLeft(childLeftNode);
+//        riftNode.setRight(childRightNode);
+
+        final TreeNode leftNode = new TreeNode();
+        leftNode.setVal(2);
+
+        final TreeNode treeNode = new TreeNode();
+        treeNode.setVal(2);
+        treeNode.setRight(riftNode);
+        treeNode.setLeft(leftNode);
+
+        final boolean validBST = solution.isValidBST(treeNode);
+
+        System.out.println(validBST);
+
+    }
+
+
 }

@@ -17,6 +17,7 @@ import java.util.Objects;
 @Component
 public class Solution {
 
+    private final List<Integer> results = Lists.newArrayList();
 
     public int[] shuffle(int[] nums, int n) {
 
@@ -46,9 +47,11 @@ public class Solution {
         return new String(bytes);
     }
 
-
-    private final List<Integer> results = Lists.newArrayList();
-
+    /**
+     * 二叉树中序遍历
+     * @param treeNode
+     * @return
+     */
     public List<Integer> inorderTraversal(TreeNode treeNode) {
         if (Objects.nonNull(treeNode)) {
             if (Objects.nonNull(treeNode.getLeft())){
@@ -61,6 +64,33 @@ public class Solution {
             }
         }
         return results;
+    }
+
+
+    /**
+     * 有效二叉树
+     * 借题思路：
+     *  有效二叉树 根节点的所有左子树的元素均小于根节点； 右子树所有的元素均大于根节点
+     *  以递归的方式，通过不断更新比较的最大值和最小值，实现对左右子树的判断
+     *
+     * @param root
+     * @return
+     */
+    public boolean isValidBST(TreeNode root) {
+        return this.isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
+
+
+    private boolean isValidBST(TreeNode root, long min, long max) {
+        if (Objects.isNull(root)) {
+            return true;
+        }
+
+        if (root.getVal() <= min || root.getVal() >= max) {
+            return false;
+        }
+
+        return isValidBST(root.getLeft(), root.getVal(), max) && isValidBST(root.getRight(), min, root.getVal());
     }
 
 
