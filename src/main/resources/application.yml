@@ -1,8 +1,0 @@
-server:
-  port: 8891
-  servlet:
-    context-path: /abathur
-
-spring:
-  application:
-    name: abathur
