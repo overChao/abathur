@@ -49,12 +49,13 @@ public class Solution {
 
     /**
      * 二叉树中序遍历
+     *
      * @param treeNode
      * @return
      */
     public List<Integer> inorderTraversal(TreeNode treeNode) {
         if (Objects.nonNull(treeNode)) {
-            if (Objects.nonNull(treeNode.getLeft())){
+            if (Objects.nonNull(treeNode.getLeft())) {
                 this.inorderTraversal(treeNode.getLeft());
             }
             results.add(treeNode.getVal());
@@ -70,8 +71,8 @@ public class Solution {
     /**
      * 有效二叉树
      * 借题思路：
-     *  有效二叉树 根节点的所有左子树的元素均小于根节点； 右子树所有的元素均大于根节点
-     *  以递归的方式，通过不断更新比较的最大值和最小值，实现对左右子树的判断
+     * 有效二叉树 根节点的所有左子树的元素均小于根节点； 右子树所有的元素均大于根节点
+     * 以递归的方式，通过不断更新比较的最大值和最小值，实现对左右子树的判断
      *
      * @param root
      * @return
@@ -95,19 +96,20 @@ public class Solution {
 
 
     /**
-     * 相同树 结构和节点均相同
+     * 相同树 结构和节点均相同  2024-11-18
+     *
      * @param p 树A
      * @param q 树B
      * @return boolean
      */
     private boolean isSameTree(TreeNode p, TreeNode q) {
-
-        if (Objects.nonNull(p) && Objects.nonNull(q)) {
-
+        if (Objects.isNull(p) && Objects.isNull(q)) {
+            return true;
         }
-
-        return Boolean.TRUE;
-
+        if (Objects.nonNull(p) && Objects.nonNull(q) && Objects.equals(p.getVal(), q.getVal())) {
+            return this.isSameTree(p.getLeft(), q.getLeft()) && this.isSameTree(p.getRight(), q.getRight());
+        }
+        return false;
     }
 
 }
