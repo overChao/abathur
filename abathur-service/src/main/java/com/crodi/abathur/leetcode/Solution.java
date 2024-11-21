@@ -21,6 +21,7 @@ public class Solution {
 
     /**
      * 数组转二叉树 仅对数组元素进行依次遍历，逐个写入到树中
+     *
      * @param nums
      * @param index
      * @return
@@ -159,5 +160,27 @@ public class Solution {
         }
         return false;
     }
+
+    /**
+     * leetCode  104. 二叉树最大深度 2024 11 21
+     * @param root
+     * @return
+     */
+    public int maxDepth(TreeNode root) {
+        int index = 0;
+        if (Objects.isNull(root)) {
+            return index;
+        }
+        return Math.max(maxDepth(root.getLeft(), index), maxDepth(root.getRight(), index)) + 1;
+    }
+
+
+    private int maxDepth(TreeNode root, int index) {
+        if (Objects.isNull(root)) {
+            return index;
+        }
+        return Math.max(maxDepth(root.getLeft(), index + 1), maxDepth(root.getRight(), index + 1));
+    }
+
 
 }

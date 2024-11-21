@@ -60,6 +60,20 @@ public class SolutionTest {
     }
 
 
+    @Test
+    public void testMaxDepth() {
+
+//        Integer[] root = {3,9,20,null,null,15,7};
+        Integer[] root = {1,null,2};
+        final TreeNode treeNode = solution.sortedToBST(root, 0);
+
+        System.out.println(JSON.toJSONString(treeNode));
+        System.out.println(solution.maxDepth(treeNode));
+
+
+
+    }
+
 
 
 
