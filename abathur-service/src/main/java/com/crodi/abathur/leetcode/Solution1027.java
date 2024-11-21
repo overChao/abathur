@@ -24,9 +24,6 @@ public class Solution1027 {
         }
 
         return result.toString();
-
-//java 字符串工具类
-//        return address.replaceAll("\\.", "[.]");
     }
 
 

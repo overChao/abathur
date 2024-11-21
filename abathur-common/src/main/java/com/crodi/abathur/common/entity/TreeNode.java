@@ -1,6 +1,7 @@
 package com.crodi.abathur.common.entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author Crodi
@@ -9,6 +10,7 @@ import lombok.Data;
  */
 
 @Data
+@NoArgsConstructor
 public class TreeNode {
 
     private int val;
@@ -17,6 +19,9 @@ public class TreeNode {
 
     private TreeNode right;
 
+    public TreeNode(int val) {
+        this.val = val;
+    }
 
     public int getVal() {
         return val;

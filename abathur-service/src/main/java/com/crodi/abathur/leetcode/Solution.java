@@ -19,6 +19,30 @@ public class Solution {
 
     private final List<Integer> results = Lists.newArrayList();
 
+    /**
+     * 数组转二叉树 仅对数组元素进行依次遍历，逐个写入到树中
+     * @param nums
+     * @param index
+     * @return
+     */
+    public TreeNode sortedToBST(Integer[] nums, int index) {
+
+        if (index >= nums.length) {
+            return null;
+        }
+
+        TreeNode root = new TreeNode();
+
+        if (Objects.isNull(nums[index])) {
+            return null;
+        }
+        root.setVal(nums[index]);
+        root.setLeft(sortedToBST(nums, 2 * index + 1));
+        root.setRight(sortedToBST(nums, 2 * index + 2));
+        return root;
+    }
+
+
     public int[] shuffle(int[] nums, int n) {
 
         int[] result = new int[nums.length];
@@ -108,6 +132,30 @@ public class Solution {
         }
         if (Objects.nonNull(p) && Objects.nonNull(q) && Objects.equals(p.getVal(), q.getVal())) {
             return this.isSameTree(p.getLeft(), q.getLeft()) && this.isSameTree(p.getRight(), q.getRight());
+        }
+        return false;
+    }
+
+    /**
+     * leetCode  101. 对称二叉树
+     *
+     * @param root
+     * @return
+     */
+    public boolean isSymmetric(TreeNode root) {
+
+        if (Objects.nonNull(root)) {
+            return this.isSymmetric(root.getLeft(), root.getRight());
+        }
+        return false;
+    }
+
+    private boolean isSymmetric(TreeNode left, TreeNode right) {
+        if (Objects.isNull(left) && Objects.isNull(right)) {
+            return true;
+        }
+        if ((Objects.nonNull(left) && Objects.nonNull(right)) && Objects.equals(right.getVal(), left.getVal())) {
+            return this.isSymmetric(left.getLeft(), right.getRight()) && this.isSymmetric(left.getRight(), right.getLeft());
         }
         return false;
     }
