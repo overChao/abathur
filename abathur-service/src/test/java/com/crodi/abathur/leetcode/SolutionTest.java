@@ -64,7 +64,7 @@ public class SolutionTest {
     public void testMaxDepth() {
 
 //        Integer[] root = {3,9,20,null,null,15,7};
-        Integer[] root = {1,null,2};
+        Integer[] root = {2,null,3,null,4,null,5,null,6};
         final TreeNode treeNode = solution.sortedToBST(root, 0);
 
         System.out.println(JSON.toJSONString(treeNode));

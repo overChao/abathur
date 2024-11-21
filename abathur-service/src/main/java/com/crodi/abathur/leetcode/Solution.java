@@ -163,6 +163,7 @@ public class Solution {
 
     /**
      * leetCode  104. 二叉树最大深度 2024 11 21
+     *
      * @param root
      * @return
      */
@@ -181,6 +182,42 @@ public class Solution {
         }
         return Math.max(maxDepth(root.getLeft(), index + 1), maxDepth(root.getRight(), index + 1));
     }
+
+
+    /**
+     * 111. 二叉树最小深度
+     * 左右子树均存在的情况， 最小深度为 深度的最小值
+     * 但是存在任一子树为空的情况下， 二叉树退化成链表，深度为链表长度
+     * todo 2024 11 21 执行效率偏低 需要优化
+     * @param root
+     * @return
+     */
+    public int minDepth(TreeNode root) {
+        int index = 0;
+        if (Objects.isNull(root)) {
+            return index;
+        }
+
+        if (Objects.isNull(root.getLeft())) {
+            return minDepth(root.getRight(), index) + 1;
+        }
+
+        if (Objects.isNull(root.getRight())) {
+            return minDepth(root.getLeft(), index) + 1;
+        }
+
+        return Math.min(minDepth(root.getLeft(), index), minDepth(root.getRight(), index)) + 1;
+
+    }
+
+    private int minDepth(TreeNode root, int index) {
+        if (Objects.isNull(root)) {
+            return index;
+        }
+        return Math.min(minDepth(root.getLeft(), index + 1), minDepth(root.getRight(), index + 1));
+    }
+
+
 
 
 }
