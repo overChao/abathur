@@ -2,9 +2,11 @@ package com.crodi.abathur.leetcode;
 
 import com.crodi.abathur.common.entity.TreeNode;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -189,6 +191,7 @@ public class Solution {
      * 左右子树均存在的情况， 最小深度为 深度的最小值
      * 但是存在任一子树为空的情况下， 二叉树退化成链表，深度为链表长度
      * todo 2024 11 21 执行效率偏低 需要优化
+     *
      * @param root
      * @return
      */
@@ -218,6 +221,27 @@ public class Solution {
     }
 
 
+    /**
+     * 110. 平衡二叉树  2024.11.26 补 11. 22号
+     * 平衡二叉树的定义：左右子树的高度差均小于等于1
+     * <p>
+     * 1. 递归计算 根节点的 左右子树的深度差
+     * 2. 依次递归左子树和右子树的 深度差
+     *
+     * @param root
+     * @return
+     */
+    // TODO 此解法不是最优解
+    public boolean isBalanced(TreeNode root) {
+
+        int index = 0;
+        if (Objects.isNull(root)) {
+            return true;
+        }
+
+        return Math.abs(maxDepth(root.getLeft(), index) - maxDepth(root.getRight(), index)) <= 1 && isBalanced(root.getLeft()) && isBalanced(root.getRight());
+
+    }
 
 
 }

@@ -75,6 +75,17 @@ public class SolutionTest {
     }
 
 
+    @Test
+    public void testIsBalanced() {
+//        Integer[] root = {1,2,2,3,3,null,null,4,4};
+        Integer[] root = {1,2,2,3,null,null,3,4,null,null,4};
+        final TreeNode treeNode = solution.sortedToBST(root, 0);
+
+        System.out.println(JSON.toJSONString(treeNode));
+        System.out.println(solution.isBalanced(treeNode));
+    }
+
+
 
 
 }
