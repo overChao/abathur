@@ -85,6 +85,16 @@ public class SolutionTest {
         System.out.println(solution.isBalanced(treeNode));
     }
 
+    @Test
+    public void testHasPathSum() {
+        Integer[] root = {10,2,11,0};
+        final TreeNode treeNode = solution.sortedToBST(root, 0);
+
+        System.out.println(JSON.toJSONString(treeNode));
+        System.out.println(solution.hasPathSum(treeNode, 12));
+
+    }
+
 
 
 

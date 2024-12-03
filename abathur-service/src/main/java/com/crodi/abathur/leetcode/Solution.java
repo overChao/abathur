@@ -244,4 +244,49 @@ public class Solution {
     }
 
 
+    /**
+     * 112. 二叉树路径总和  2024.11.26 补11.25
+     * 递归！！！！！！！！！！！！！！！！！！
+     *
+     * @param root
+     * @param targetSum
+     * @return
+     */
+    public boolean hasPathSum(TreeNode root, int targetSum) {
+//        if (root == null && targetSum == 0) {
+//            return false;
+//        }
+//        return pathSum(root, targetSum);
+
+        if (root == null) {
+            return false;
+        }
+
+        if (Objects.isNull(root.getLeft()) && Objects.isNull(root.getRight())) {
+            return targetSum - root.getVal() == 0;
+        }
+
+        return hasPathSum(root.getLeft(),  targetSum - root.getVal())
+                || hasPathSum(root.getRight(),  targetSum - root.getVal());
+
+    }
+
+    // 错误解法
+    // 问题说明： 递归到叶子节点结束， 不能再继续递归了，否则无法判断以下情况
+    // 1， 根节点为空， 目标路径长度为0的情况；
+    // 2. 存在左子树或者右子树不满足条件，但是根节点满足条件的情况
+//    public boolean pathSum(TreeNode root, int targetSum) {
+//        if (root == null) {
+//            return targetSum == 0;
+//        }
+//
+//        targetSum = targetSum - root.getVal();
+          // 存在 叶子节点 为 0  的情况，
+//        if (targetSum <= 0 && (Objects.nonNull(root.getLeft()) || Objects.nonNull(root.getRight()))) {
+//            return false;
+//        }
+//        return pathSum(root.getLeft(), targetSum) || pathSum(root.getRight(), targetSum);
+//    }
+
+
 }
