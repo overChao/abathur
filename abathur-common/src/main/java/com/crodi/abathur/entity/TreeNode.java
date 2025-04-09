@@ -1,4 +1,4 @@
-package com.crodi.abathur.common.entity;
+package com.crodi.abathur.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

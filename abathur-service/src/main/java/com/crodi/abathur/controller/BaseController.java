@@ -1,30 +1,29 @@
 package com.crodi.abathur.controller;
 
-import com.crodi.abathur.common.entity.qo.BaseQo;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
+import com.crodi.abathur.service.impl.BlockInteractionServiceImpl;
+import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author Crodi
  * @date 2024/8/21 17:04
  * @description: TODO
  */
-
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/api")
 public class BaseController {
 
-    private Map<String, String> context = new HashMap<>(16);
+    private final BlockInteractionServiceImpl blockInteractionService;
 
-    @RequestMapping(value = "/auth", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public void syncUserAuthentic(@RequestBody BaseQo qo) {
-
+    @SneakyThrows
+    @GetMapping("/checkRequest/{id}")
+    public String checkRequest(@PathVariable String id) {
+        return blockInteractionService.checkRequestId(id);
     }
 
 

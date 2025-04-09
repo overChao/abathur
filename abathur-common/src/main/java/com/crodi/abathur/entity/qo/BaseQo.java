@@ -1,4 +1,4 @@
-package com.crodi.abathur.common.entity.qo;
+package com.crodi.abathur.entity.qo;
 
 import lombok.Data;
 

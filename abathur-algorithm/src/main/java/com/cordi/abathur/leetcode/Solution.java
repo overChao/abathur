@@ -1,10 +1,13 @@
-package com.crodi.abathur.leetcode;
+package com.cordi.abathur.leetcode;
 
-import com.crodi.abathur.common.entity.TreeNode;
+
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import org.checkerframework.checker.nullness.qual.Nullable;
 import org.springframework.stereotype.Component;
+import com.crodi.abathur.entity.TreeNode;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -266,8 +269,7 @@ public class Solution {
             return targetSum - root.getVal() == 0;
         }
 
-        return hasPathSum(root.getLeft(),  targetSum - root.getVal())
-                || hasPathSum(root.getRight(),  targetSum - root.getVal());
+        return hasPathSum(root.getLeft(), targetSum - root.getVal()) || hasPathSum(root.getRight(), targetSum - root.getVal());
 
     }
 
@@ -281,12 +283,38 @@ public class Solution {
 //        }
 //
 //        targetSum = targetSum - root.getVal();
-          // 存在 叶子节点 为 0  的情况，
+    // 存在 叶子节点 为 0  的情况，
 //        if (targetSum <= 0 && (Objects.nonNull(root.getLeft()) || Objects.nonNull(root.getRight()))) {
 //            return false;
 //        }
 //        return pathSum(root.getLeft(), targetSum) || pathSum(root.getRight(), targetSum);
 //    }
 
+
+    public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
+        final List<List<Integer>> results = new ArrayList<>();
+        final List<Integer> objects = new ArrayList<>();
+        pathSum(root, targetSum, objects, results);
+        return results;
+    }
+
+    public void pathSum(TreeNode root, int targetSum, List<Integer> vals, List<List<Integer>> results) {
+
+        if (root == null) {
+            return;
+        }
+
+        targetSum -= root.getVal();
+        vals.add(root.getVal());
+        if (Objects.isNull(root.getLeft()) && Objects.isNull(root.getRight())) {
+            if (targetSum == 0) {
+                results.add(new ArrayList<>(vals));
+            }
+        }
+        pathSum(root.getLeft(), targetSum, vals, results);
+        pathSum(root.getRight(), targetSum, vals, results);
+        vals.remove(vals.size() - 1);
+
+    }
 
 }

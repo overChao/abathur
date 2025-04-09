@@ -1,6 +1,7 @@
-package com.crodi.abathur.common.response;
+package com.crodi.abathur.response;
 
-import com.crodi.abathur.common.constant.ResultCode;
+
+import com.crodi.abathur.constant.ResultCode;
 import lombok.Data;
 
 /**

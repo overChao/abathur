@@ -1,8 +1,8 @@
-package com.crodi.abathur.leetcode;
+package com.cordi.abathur.leetcode;
 
 
 import com.alibaba.fastjson2.JSON;
-import com.crodi.abathur.common.entity.TreeNode;
+import com.crodi.abathur.entity.TreeNode;
 import com.google.common.collect.Lists;
 import jakarta.annotation.Resource;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -95,6 +95,44 @@ public class SolutionTest {
 
     }
 
+
+    @Test
+    public void testPathSum() {
+
+
+        Integer[] root = {5,4,8,11,null,13,4,7,2,null,null,5,1};
+        final TreeNode treeNode = solution.sortedToBST(root, 0);
+
+        System.out.println(JSON.toJSONString(treeNode));
+
+        final List<List<Integer>> lists = solution.pathSum(treeNode, 22);
+        System.out.println(lists);
+    }
+
+
+
+
+
+    @Test
+    public void testValueReference(){
+
+
+        final List<@Nullable Object> res = Lists.newArrayList();
+        final List< Object> objects = Lists.newArrayList();
+
+        System.out.println("1. " + JSON.toJSONString(objects));
+        objects.add(1);
+
+        System.out.println("2. " + JSON.toJSONString(objects));
+        res.add(objects);
+        System.out.println("3. " + JSON.toJSONString(res));
+        objects.remove(objects.size() -1);
+        System.out.println("4. " + JSON.toJSONString(objects));
+        System.out.println("5. " + JSON.toJSONString(res));
+
+
+
+    }
 
 
 

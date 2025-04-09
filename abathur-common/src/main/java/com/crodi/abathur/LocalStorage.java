@@ -1,4 +1,4 @@
-package com.crodi.abathur.common;
+package com.crodi.abathur;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
