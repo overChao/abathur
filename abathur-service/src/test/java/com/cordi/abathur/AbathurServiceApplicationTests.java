@@ -1,13 +1,13 @@
 package com.cordi.abathur;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AbathurServiceApplicationTests {
+public class AbathurServiceApplicationTests {
 
     @Test
-    void contextLoads() {
+    public void contextLoads() {
     }
 
 }

@@ -1,0 +1,20 @@
+
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: abathur-project
+
+
+# ??????
+event-loop:
+  scheduler:
+    core-pool-size: 4
+    max-pool-size: 8
+    queue-capacity: 1000
+    keep-alive-seconds: 60
+    poll-timeout: 1000

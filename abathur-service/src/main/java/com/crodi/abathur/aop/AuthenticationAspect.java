@@ -2,6 +2,7 @@ package com.crodi.abathur.aop;
 
 
 import com.crodi.abathur.LocalStorage;
+import jakarta.servlet.http.HttpServletRequest;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -9,7 +10,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
 
-import javax.servlet.http.HttpServletRequest;
+
 import java.util.Map;
 
 /**
