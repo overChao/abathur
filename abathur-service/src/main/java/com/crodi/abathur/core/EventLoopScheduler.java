@@ -46,20 +46,17 @@ public class EventLoopScheduler implements SmartLifecycle {
 
         while (running.get()) {
             try {
-//                if (!taskQueue.isEmpty()) {
                 final Runnable task = taskQueue.poll(properties.getPollTimeout(), TimeUnit.MILLISECONDS);
 
                 if (Objects.nonNull(task)) {
                     submitToWorker(task);
                 }
-//                }
 
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
                 break;
             }
         }
-
 
     }
 
@@ -104,7 +101,9 @@ public class EventLoopScheduler implements SmartLifecycle {
     @Override
     public void start() {
         if (running.compareAndSet(Boolean.FALSE, Boolean.TRUE)) {
+            // 定义循环事件线程
             eventLoopThread = new Thread(this::runEventLoop);
+            // 设置为守护线程
             eventLoopThread.setDaemon(Boolean.TRUE);
             eventLoopThread.start();
         }
