@@ -11,7 +11,7 @@ import java.util.function.Function;
  * @description:
  * 线程执行器
  */
-public interface Executor {
+public interface AsyncExecutor {
 
     /**
      * 无参任务
