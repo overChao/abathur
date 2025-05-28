@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AreaInfoManageServiceImpl implements AreaInfoService {
 
-    private AreaInfoMapper areaInfoMapper;
+    private final AreaInfoMapper areaInfoMapper;
 
     @Override
     public void addBatch(List<AreaInfo> dataList) {
@@ -24,8 +24,8 @@ public class AreaInfoManageServiceImpl implements AreaInfoService {
     }
 
     @Override
-    public void updateBatch(List<AreaInfo> dataList) {
-        final int i = areaInfoMapper.updateBatch(dataList);
+    public void update(AreaInfo areaInfo) {
+        final int i = areaInfoMapper.update(areaInfo, null);
     }
 
     @Override

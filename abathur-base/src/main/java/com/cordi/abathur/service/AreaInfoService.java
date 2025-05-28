@@ -16,7 +16,7 @@ public interface AreaInfoService {
 
     void addBatch(List<AreaInfo> dataList);
 
-    void updateBatch(List<AreaInfo> dataList);
+    void update(AreaInfo dataList);
 
     void delete(List<AreaInfo> dataList);
 

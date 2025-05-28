@@ -16,27 +16,11 @@ import java.util.List;
 @Mapper
 public interface AreaInfoMapper extends BaseMapper<AreaInfo> {
 
-
     @Insert("<script>" +
             "insert into area_info (area_name,area_description) values " +
             "<foreach collection='areaInfoList' item='item' index='index' separator=','>" +
             " (#{item.areaName},#{item.areaDescription})" +
             "</script>")
     int insertBatch(List<AreaInfo> areaInfoList);
-
-    @Insert("<script>" +
-            "update area_info set area_name=#{areaName},area_description=#{areaDescription} where id in " +
-            "<foreach collection='areaInfoList' item='item' index='index' separator=','>" +
-            "#{item.id}" +
-            "</script>")
-    int updateBatch(List<AreaInfo> areaInfoList);
-
-//    @Insert("<script>" +
-//            "delete from area_info where id in " +
-//            "<foreach collection='areaInfoList' item='item' index='index' separator=','>" +
-//            "#{item.id}" +
-//            "</script>")
-//    int deleteBatch(List<AreaInfo> areaInfoList);
-
 
 }
