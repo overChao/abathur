@@ -1,10 +1,9 @@
 package com.crodi.abathur.core;
 
-import com.crodi.abathur.config.EventLoopProperties;
+import com.crodi.abathur.config.ThreadPoolProperties;
 import org.springframework.context.SmartLifecycle;
 import org.springframework.stereotype.Component;
 
-import java.util.Objects;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -24,7 +23,7 @@ public class EventLoopScheduler implements SmartLifecycle {
     private final ExecutorService workerPool;
 
     // 配置
-    private final EventLoopProperties properties;
+    private final ThreadPoolProperties properties;
 
 
     private final AtomicBoolean running = new AtomicBoolean(Boolean.FALSE);
@@ -33,7 +32,7 @@ public class EventLoopScheduler implements SmartLifecycle {
     private Thread eventLoopThread;
 
 
-    public EventLoopScheduler(EventLoopProperties properties) {
+    public EventLoopScheduler(ThreadPoolProperties properties) {
         this.properties = properties;
         this.taskQueue = new LinkedBlockingDeque<>(properties.getQueueCapacity());
 
@@ -46,13 +45,12 @@ public class EventLoopScheduler implements SmartLifecycle {
 
         while (running.get()) {
             try {
-                final Runnable task = taskQueue.poll(properties.getPollTimeout(), TimeUnit.MILLISECONDS);
+//                final Runnable task = taskQueue.poll(properties.getPollTimeout(), TimeUnit.MILLISECONDS);
+//                if (Objects.nonNull(task)) {
+//                    submitToWorker(task);
+//                }
 
-                if (Objects.nonNull(task)) {
-                    submitToWorker(task);
-                }
-
-            } catch (InterruptedException e) {
+            } catch (Exception e) {
                 Thread.currentThread().interrupt();
                 break;
             }

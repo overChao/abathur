@@ -7,7 +7,7 @@ package com.crodi.abathur.service;
  */
 public interface TaskManagerService {
 
-    void addTask();
+    void addTask(Object data);
 
     void removeTask();
 

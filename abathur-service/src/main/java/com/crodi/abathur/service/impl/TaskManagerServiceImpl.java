@@ -1,11 +1,11 @@
 package com.crodi.abathur.service.impl;
 
-import com.crodi.abathur.core.Executor;
-import com.crodi.abathur.core.ExecutorQueueManager;
-import com.crodi.abathur.entity.AwarenessContext;
+import com.alibaba.fastjson2.JSON;
+import com.crodi.abathur.core.TaskQueueManager;
 import com.crodi.abathur.service.RoutePlanningService;
 import com.crodi.abathur.service.TaskManagerService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,35 +17,24 @@ import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
 @Service
-public class TaskManagerServiceImpl implements TaskManagerService, Executor {
+@Slf4j
+public class TaskManagerServiceImpl implements TaskManagerService {
 
 
     private final RoutePlanningService routePlanningService;
 
-    private final ExecutorQueueManager executorQueueManager;
-
-
-    private final AwarenessContext context;
-
+    private final TaskQueueManager executorQueueManager;
 
 
     @Override
-    public void execute(AwarenessContext context) {
-        routePlanningService.execute();
-    }
+    public void addTask(Object data) {
 
-    @Override
-    public void addTask() {
+        //TODO 2025/5/12: 填充保存逻辑
+        log.info("save task success:{}", JSON.toJSONString(data));
 
-        // 任务持久化
-
-
-
-        // 启动调度
-        context.setNode("Tas");
-        context.setDataList(null);
-        executorQueueManager.addTaskToQueue(context, this);
-
+        // 驱动 任务
+        // 初始化上下文  设置当前上下文的节点
+        //
 
     }
 
