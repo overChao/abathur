@@ -22,6 +22,8 @@
         <module>abathur-common</module>
         <module>abathur-service</module>
         <module>abathur-algorithm</module>
+        <module>abathur-core</module>
+        <module>abathur-base</module>
     </modules>
 
     <properties>
@@ -104,6 +106,12 @@
                 <groupId>jakarta.annotation</groupId>
                 <artifactId>jakarta.annotation-api</artifactId>
                 <version>2.1.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.5.2</version>
             </dependency>
 
         </dependencies>
