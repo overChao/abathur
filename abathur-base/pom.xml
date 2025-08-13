@@ -7,7 +7,6 @@
         <artifactId>abathur</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.cordi.abathur</groupId>
     <artifactId>abathur-base</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>abathur-base</name>

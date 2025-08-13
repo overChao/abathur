@@ -24,6 +24,7 @@
         <module>abathur-algorithm</module>
         <module>abathur-core</module>
         <module>abathur-base</module>
+        <module>abathur-starter</module>
     </modules>
 
     <properties>

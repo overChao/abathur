@@ -7,7 +7,6 @@
         <artifactId>abathur</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.crodi.abathur</groupId>
     <artifactId>abathur-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>abathur-service</name>
@@ -54,7 +53,7 @@
         </dependency>
 
         <dependency>
-            <groupId>com.crodi.abathur</groupId>
+            <groupId>com.crodi</groupId>
             <artifactId>abathur-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
