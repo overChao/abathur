@@ -4,11 +4,12 @@ import com.alibaba.fastjson2.JSON;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Queues;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+
 
 import java.util.*;
 
+@Data
 public class StaticGraph {
     private final int vertex;
 
@@ -17,8 +18,7 @@ public class StaticGraph {
 
     // 端点：用以标识结束
     // TODO  zhangkc 2025/7/21: 优化端点实现
-    @Getter
-    @Setter
+
     private List<String> endpoints;
 
     private final Map<String, List<String>> adjMap;

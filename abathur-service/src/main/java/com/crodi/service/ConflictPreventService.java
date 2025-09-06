@@ -1,8 +1,8 @@
-package com.eforkrobot.service;
+package com.crodi.service;
 
-import com.eforkrobot.modules.wcs.common.dto.ScheduleResult;
-import com.eforkrobot.modules.wcs.common.dto.TaskRoute;
-import com.eforkrobot.modules.wcs.common.dto.TaskStatus;
+import com.crodi.entity.ScheduleResult;
+import com.crodi.entity.TaskRoute;
+import com.crodi.entity.TaskStatus;
 
 import java.util.List;
 import java.util.Map;

@@ -1,10 +1,10 @@
-package com.eforkrobot.service.impl;
+package com.crodi.service.impl;
 
-import com.eforkrobot.modules.wcs.common.dto.ScheduleResult;
-import com.eforkrobot.modules.wcs.common.dto.TaskRoute;
-import com.eforkrobot.modules.wcs.common.dto.TaskStatus;
-import com.eforkrobot.modules.wcs.common.enums.TaskStateEnum;
-import com.eforkrobot.service.ConflictPreventService;
+import com.crodi.entity.ScheduleResult;
+import com.crodi.entity.TaskRoute;
+import com.crodi.entity.TaskStatus;
+import com.crodi.enums.TaskStateEnum;
+import com.crodi.service.ConflictPreventService;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

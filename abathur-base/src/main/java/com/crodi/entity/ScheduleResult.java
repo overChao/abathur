@@ -1,4 +1,4 @@
-package com.eforkrobot.modules.wcs.common.dto;
+package com.crodi.entity;
 
 import lombok.Builder;
 import lombok.Data;

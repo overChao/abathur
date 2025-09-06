@@ -1,4 +1,4 @@
-package com.eforkrobot.modules.wcs.common.enums;
+package com.crodi.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

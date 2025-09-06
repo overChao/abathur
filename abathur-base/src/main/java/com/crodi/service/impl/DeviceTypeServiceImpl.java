@@ -1,8 +1,8 @@
-package com.crodi.abathur.service.impl;
+package com.crodi.service.impl;
 
-import com.crodi.abathur.entity.DeviceType;
-import com.crodi.abathur.mapper.DeviceTypeMapper;
-import com.crodi.abathur.service.DeviceTypeService;
+import com.crodi.entity.DeviceType;
+import com.crodi.mapper.DeviceTypeMapper;
+import com.crodi.service.DeviceTypeService;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
