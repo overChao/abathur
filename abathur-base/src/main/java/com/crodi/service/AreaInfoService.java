@@ -1,6 +1,6 @@
-package com.crodi.abathur.service;
+package com.crodi.service;
 
-import com.crodi.abathur.entity.AreaInfo;
+import com.crodi.entity.AreaInfo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

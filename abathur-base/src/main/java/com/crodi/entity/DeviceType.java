@@ -1,4 +1,4 @@
-package com.crodi.abathur.entity;
+package com.crodi.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

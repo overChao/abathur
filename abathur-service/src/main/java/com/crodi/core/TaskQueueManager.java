@@ -1,5 +1,6 @@
 package com.crodi.core;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -16,6 +17,7 @@ import java.util.concurrent.LinkedBlockingDeque;
  * @description: 执行队列管理工具
  */
 
+@Slf4j
 @Component
 public class TaskQueueManager implements ApplicationRunner {
 

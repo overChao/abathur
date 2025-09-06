@@ -1,7 +1,7 @@
-package com.crodi.abathur.mapper;
+package com.crodi.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.crodi.abathur.entity.DeviceType;
+import com.crodi.entity.DeviceType;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 

@@ -1,8 +1,8 @@
-package com.crodi.abathur.service.impl;
+package com.crodi.service.impl;
 
-import com.crodi.abathur.entity.AreaInfo;
-import com.crodi.abathur.mapper.AreaInfoMapper;
-import com.crodi.abathur.service.AreaInfoService;
+import com.crodi.entity.AreaInfo;
+import com.crodi.mapper.AreaInfoMapper;
+import com.crodi.service.AreaInfoService;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;
